@@ -35,13 +35,15 @@ public class PushCounterPanel extends JPanel{
 	private JRadioButton rdbtnNewRadioButton;
 	private ImageIcon image, netflix;
 	private int x, y;
+	private String movieName = "Me Time";
+	private String imageName = "MeTime";
 	
 	public PushCounterPanel() {
 		allData = new Shows("allData","./project1/netflixShowsModified.txt");
 		
 		//image = new ImageIcon (this.getClass().getResource("/Dog.gif"));
 		netflix = new ImageIcon (this.getClass().getResource("/netflixIntro.gif"));
-		image = new ImageIcon (this.getClass().getResource("/MeTime.jpg"));
+		image = new ImageIcon (this.getClass().getResource("/" + imageName +".jpg"));
 		
 		x = 500;
 		y = 230;
@@ -116,11 +118,38 @@ public class PushCounterPanel extends JPanel{
 					for (ShowWeek sw : moviesInWeek){
 						data[index] = sw.getShowTitle();
 						index++;
+						movieName = sw.getShowTitle();
 					}
 					Movies.setModel(new DefaultComboBoxModel(data));
 				}
+				if(movieName == "Day Shift")
+				{
+					imageName = "DayShift";
+				}
+				else if(movieName == "Purple Hearts")
+				{
+					imageName = "PurpleHearts";
+				}
+				else if(movieName == "The Gray Man")
+				{
+					imageName = "GrayMan";
+				}
+				else if(movieName == "The Sea Beast")
+				{
+					imageName = "SeaBeast";
+				}
+				else if(movieName == "The Man from Toronto")
+				{
+					imageName = "ManFromToronto";
+				}
+				else 
+				{
+					imageName = "MeTime";
+				}
+				repaint();
 			}
 		});
+
 		btnNewButton.setBounds(68, 230, 89, 23);
 		add(btnNewButton);
 		
