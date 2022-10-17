@@ -149,90 +149,22 @@ public class MainPanel extends JPanel{
 		JButton Poster2 = new JButton("Poster 2");
 		Poster2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				moviePoster.setIcon(new ImageIcon("./LoveInTheVilla.jpg"));
+				moviePoster.setIcon(new ImageIcon("./Warcraft.jpg"));
 			}
 		});
-
 		Poster2.setBounds(307, 379, 85, 21);
-		Poster2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				moviePoster.setIcon(new ImageIcon("./ICameBy.jpg"));
-			}
-		});
-
 		add(Poster2);
 
 		JButton Poster3 = new JButton("Poster 3");
 		Poster3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				moviePoster.setIcon(new ImageIcon("./ICameBy.jpg"));
 			}
 		});
 
 		Poster3.setBounds(402, 379, 85, 21);
 		add(Poster3);
 
-		JButton Poster4 = new JButton("Poster 4");
-		Poster4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-
-		Poster4.setBounds(212, 410, 85, 21);
-		add(Poster4);
-
-		JButton Poster5 = new JButton("Poster 5");
-		Poster5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-
-		Poster5.setBounds(307, 410, 85, 21);
-		add(Poster5);
-
-		JButton Poster6 = new JButton("Poster 6");
-		Poster6.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-
-		Poster6.setBounds(402, 410, 85, 21);
-		add(Poster6);
-
-		JButton Poster7 = new JButton("Poster 7");
-		Poster7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-
-		Poster7.setBounds(212, 445, 85, 21);
-		add(Poster7);
-
-		JButton Poster8 = new JButton("Poster 8");
-		Poster8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-
-		Poster8.setBounds(307, 445, 85, 21);
-		add(Poster8);
-
-		JButton Poster9 = new JButton("Poster 9");
-		Poster9.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-
-		Poster9.setBounds(402, 445, 85, 21);
-		add(Poster9);
-
-		JButton Poster10 = new JButton("Poster 10");
-		Poster10.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-
-		Poster10.setBounds(307, 481, 85, 21);
-		add(Poster10);
 
 		JRadioButton rdbtnAdd = new JRadioButton("Add");
 		buttonGroup.add(rdbtnAdd);
