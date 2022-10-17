@@ -51,57 +51,63 @@ public class MainPanel extends JPanel{
 		netflix = new ImageIcon (this.getClass().getResource("/netflixIntro.gif"));
 		//image = new ImageIcon (this.getClass().getResource("/MeTime.jpg"));
 
+		//Panel to display black box
 		JPanel PowerSave = new JPanel();
 		PowerSave.setBackground(Color.BLACK);
 		PowerSave.setForeground(Color.BLACK);
 		PowerSave.setBounds(0, 34, 800, 566);
 		add(PowerSave);
 
+		//displays movie poster
 		JLabel moviePoster = new JLabel(" ");
 		moviePoster.setIcon(new ImageIcon("./MeTime.jpg"));
 		moviePoster.setBounds(518, 127, 215, 332);
 		add(moviePoster);
 
-		count = 0;
+		//layout and dimension of panel
 		setLayout(null);
 		setBackground(Color.LIGHT_GRAY);
 		setPreferredSize(new Dimension(800, 600));
 
+		//text field for input
 		movieTitle = new JTextField("2022-09-04");
 		movieTitle.setBounds(36, 183, 149, 20);
 		add(movieTitle);
 		movieTitle.setColumns(10);
 
+		//label for text field
 		lblNewLabel = new JLabel("Enter Week:");
 		lblNewLabel.setBounds(36, 171, 105, 14);
 		add(lblNewLabel);
 
+		//scroll pane for text area
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(227, 143, 215, 197);
 		add(scrollPane);
-
+		//text area
 		JTextArea textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
 		textArea.setText(allData.toString());
 
+		//combo box holding data
 		JComboBox Movies = new JComboBox();
 		ArrayList<ShowWeek> moviesInWeek = allData.getOneWeek("2022-09-04");
-
 		String [] data = new String[moviesInWeek.size()];
 		int index = 0;
 		for (ShowWeek sw : moviesInWeek){
 			data[index] = sw.getShowTitle();
 			index++;
 		}
-
 		Movies.setModel(new DefaultComboBoxModel(data));
 		Movies.setBounds(36, 255, 149, 22);
 		add(Movies);
 
+		//label for combo box
 		JLabel lblNewLabel_1 = new JLabel("Shows:");
 		lblNewLabel_1.setBounds(36, 241, 46, 14);
 		add(lblNewLabel_1);
 
+		//button to get requested show
 		JButton btnNewButton = new JButton("Get Shows");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -121,6 +127,7 @@ public class MainPanel extends JPanel{
 		btnNewButton.setBounds(36, 203, 89, 23);
 		add(btnNewButton);
 
+		//checkbox to enable power saver
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Power Saving Mode");
 		chckbxNewCheckBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -137,6 +144,7 @@ public class MainPanel extends JPanel{
 		chckbxNewCheckBox.setBounds(13, 6, 149, 21);
 		add(chckbxNewCheckBox);
 
+		//button to show button 1
 		JButton Poster1 = new JButton("Poster 1");
 		Poster1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -146,6 +154,7 @@ public class MainPanel extends JPanel{
 		Poster1.setBounds(212, 379, 85, 21);
 		add(Poster1);
 
+		//button to show button 2
 		JButton Poster2 = new JButton("Poster 2");
 		Poster2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -155,6 +164,7 @@ public class MainPanel extends JPanel{
 		Poster2.setBounds(307, 379, 85, 21);
 		add(Poster2);
 
+		//button to show button 3
 		JButton Poster3 = new JButton("Poster 3");
 		Poster3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -166,27 +176,29 @@ public class MainPanel extends JPanel{
 		add(Poster3);
 
 
+		//radio button for adding show
 		JRadioButton rdbtnAdd = new JRadioButton("Add");
 		buttonGroup.add(rdbtnAdd);
 		rdbtnAdd.setBounds(13, 345, 109, 23);
 		add(rdbtnAdd);
 
+		//radio button for purging show
 		JRadioButton rdbtnPurge = new JRadioButton("Remove");
 		buttonGroup.add(rdbtnPurge);
 		rdbtnPurge.setBounds(13, 384, 109, 23);
 		add(rdbtnPurge);
 
+		//radio button for editing show
 		JRadioButton rdbtnEdit = new JRadioButton("Edit");
 		buttonGroup.add(rdbtnEdit);
 		rdbtnEdit.setBounds(13, 422, 109, 23);
 		add(rdbtnEdit);
 
-
-
-
+		//button to start adding, purging, or editing shows
 		JButton editButton = new JButton("Do Edit!");
 		editButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//adding
 				if(rdbtnAdd.isSelected())
 				{
 					week = JOptionPane.showInputDialog("Enter a Week");
@@ -207,12 +219,15 @@ public class MainPanel extends JPanel{
 
 					allData.addShowWeek(newShow);
 				}
+				//purging
 				else if(rdbtnPurge.isSelected())
 				{
 					showTitle = JOptionPane.showInputDialog("Enter a Title");
 					allData.purgeShow(showTitle);
 					
-				}else if(rdbtnEdit.isSelected())
+				}
+				//editing
+				else if(rdbtnEdit.isSelected())
 				{
 					String editShowTitle = JOptionPane.showInputDialog("Enter a Title");
 					String editWeek = JOptionPane.showInputDialog("Enter a Week");
@@ -241,8 +256,7 @@ public class MainPanel extends JPanel{
 		});
 		editButton.setBounds(128, 345, 89, 23);
 		add(editButton);
-
-
+		
 	}
 
 	public void doClose() {

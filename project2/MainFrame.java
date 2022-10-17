@@ -1,3 +1,7 @@
+/*Addison Zheng
+ *CSCI 3381
+ *
+ */
 package project2;
 
 import java.awt.event.WindowAdapter;
