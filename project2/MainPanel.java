@@ -217,7 +217,7 @@ public class MainPanel extends JPanel{
 					String editShowTitle = JOptionPane.showInputDialog("Enter a Title");
 					String editWeek = JOptionPane.showInputDialog("Enter a Week");
 
-					ShowWeek editShowWeek = allData.find(showTitle, week);
+					ShowWeek editShowWeek = allData.find(editShowTitle, editWeek);
 
 					week = JOptionPane.showInputDialog("Enter a Week");
 					category = JOptionPane.showInputDialog("Enter a Category");
