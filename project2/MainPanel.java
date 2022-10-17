@@ -214,8 +214,8 @@ public class MainPanel extends JPanel{
 					
 				}else if(rdbtnEdit.isSelected())
 				{
-					showTitle = JOptionPane.showInputDialog("Enter a Title");
-					week = JOptionPane.showInputDialog("Enter a Week");
+					String editShowTitle = JOptionPane.showInputDialog("Enter a Title");
+					String editWeek = JOptionPane.showInputDialog("Enter a Week");
 
 					ShowWeek editShowWeek = allData.find(showTitle, week);
 
