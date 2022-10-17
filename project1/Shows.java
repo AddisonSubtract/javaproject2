@@ -132,11 +132,17 @@ public class Shows {
 	//tostring method with purgeCheck
 	public String toString() {
 		// returns a string representation of this showWeeks
+		int count = 0;
 		String toReturn = "";
 		for (ShowWeek s : showWeeks) {
 			if(purgeCheck(s.getShowTitle())== true)
 				continue;
 			toReturn += s.toString();
+			count++;
+			if(count >= 10)
+			{
+				return toReturn;
+			}
 		}	
 		return toReturn;
 	}

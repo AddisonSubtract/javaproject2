@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>guiIntro</name>
+	<name>javaproject2</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -18,7 +18,13 @@
 		<link>
 			<name>Dog.gif</name>
 			<type>1</type>
-			<locationURI>PROJECT_LOC/guiIntro/Dog.gif</locationURI>
+			<locationURI>copy_PROJECT_LOC/guiIntro/Dog.gif</locationURI>
 		</link>
 	</linkedResources>
+	<variableList>
+		<variable>
+			<name>copy_PROJECT_LOC</name>
+			<value>$%7BPARENT-3-PROJECT_LOC%7D/GitHub/javaproject2</value>
+		</variable>
+	</variableList>
 </projectDescription>
